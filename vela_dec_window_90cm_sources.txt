@@ -1,0 +1,2 @@
+Source_Name	RA_(deg)	Dec_(deg)	Flux_(Jy)
+0042-442	10.539259	-44.237661	13.000
