@@ -61,7 +61,7 @@ if resp.lower().startswith("n"):
 hdr_version = "1.0"
 dada_version = "1.0"
 instrument = "Fake"
-telescope  = "GRO"
+telescope  = "GMRT"
 source     = "J0534+2200"
 freq       = 1420     # MHz
 bw         = 40       # MHz
@@ -182,7 +182,7 @@ if len(header_bytes) > header_size:
     sys.exit("Header too long for header_size")
 header_padded = header_bytes.ljust(header_size, b'\x00')
 
-outfile = f"{base}.dada"
+outfile = f"/mnt/ssd/{base}.dada"
 # write header
 with open(outfile, "wb") as f_out:
     f_out.write(header_padded)
@@ -228,6 +228,5 @@ if histogram:
     plt.title('Histogram of 16-bit samples')
     plt.tight_layout()
     plt.show()
-    print(f"Minimum 16-bit sample value: {min_val}")
-    print(f"Maximum 16-bit sample value: {max_val}")
-
+print(f"Minimum 16-bit sample value: {min_val}")
+print(f"Maximum 16-bit sample value: {max_val}")
